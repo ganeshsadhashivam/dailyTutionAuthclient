@@ -4,11 +4,13 @@ import avatar from "../assets/profile.png";
 import styles from "../styles/Username.module.css";
 import { Toaster } from "react-hot-toast";
 import { useFormik } from "formik";
+import { usernameValidate } from "../helper/validate";
 const Username = () => {
   const formik = useFormik({
     initialValues: {
       username: "",
     },
+    validate: usernameValidate,
     validateOnBlur: false,
     validateOnChange: false,
     onSubmit: async (values) => {
@@ -19,6 +21,7 @@ const Username = () => {
   return (
     // justify-center items-center
     <div className="container mx-auto">
+      <Toaster position="top-center"></Toaster>
       <div className="flex justify-center items-center  h-screen">
         <div className={styles.glass}>
           <div className="title flex flex-col items-center">

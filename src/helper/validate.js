@@ -27,8 +27,7 @@ function passwordVerify(errors = [], values) {
 
     */
 
-  const specialChars =
-    /^(?=.*[-\#\$\.\%\&\@\!\+\=\<\>\*])(?=.*[a-zA-Z])(?=.*\d).{8,12}$/;
+  const specialChars = "";
 
   if (!values.password) {
     errors.password = toast.error("Password required...!");
